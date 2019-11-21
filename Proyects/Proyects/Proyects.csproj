@@ -334,9 +334,11 @@
     <Content Include="Views\Asignaturas\Details.cshtml" />
     <Content Include="Views\Asignaturas\Edit.cshtml" />
     <Content Include="Views\Asignaturas\Index.cshtml" />
+    <Content Include="Views\Home\Miembros.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="img\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

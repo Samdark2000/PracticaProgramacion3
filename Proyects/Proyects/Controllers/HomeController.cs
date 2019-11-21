@@ -33,6 +33,13 @@ namespace Proyects.Controllers
                
         }
 
+        public ActionResult Miembros()
+        {
+
+
+            return View();
+        }
+
         // GET: Home/Details/5
         public ActionResult Details(int? id)
         {
