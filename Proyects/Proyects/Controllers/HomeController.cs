@@ -7,9 +7,13 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Proyects.Models;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.IO;
 
 namespace Proyects.Controllers
 {
+    [RequireHttps]
+
     public class HomeController : Controller
     {
         private AgendaEntities db = new AgendaEntities();
@@ -33,9 +37,56 @@ namespace Proyects.Controllers
                
         }
 
+        public ActionResult About(HttpPostedFileBase excelfile)
+        {
+            if (excelfile == null || excelfile.ContentLength == 0)
+            {
+                ViewBag.Error = "Please select a excel file";
+                return View("About");
+            }
+            else
+            {
+                if (excelfile.FileName.EndsWith("xls") || excelfile.FileName.EndsWith("xlsx"))
+                {
+                    string path = Server.MapPath("~/ArchExcel/" + excelfile.FileName);
+                    if (System.IO.File.Exists(path))
+                        System.IO.File.Delete(path);
+                    excelfile.SaveAs(path);
+                    Excel.Application application = new Excel.Application();
+                    Excel.Workbook workbook = application.Workbooks.Open(path);
+                    Excel.Worksheet worksheet = workbook.ActiveSheet;
+                    Excel.Range range = worksheet.UsedRange;
+                    List<Product> listProducts = new List<Product>();
+                    for (int row = 3; row <= range.Rows.Count; row++)
+                    {
+                        Product p = new Product();
+                        p.id = ((Excel.Range)range.Cells[row, 1]).Text;
+                        p.evento = ((Excel.Range)range.Cells[row, 2]).Text;
+                        p.fecha = ((Excel.Range)range.Cells[row, 3]).Text;
+                        p.hora = int.Parse(((Excel.Range)range.Cells[row, 4]).Text);
+                        listProducts.Add(p);
+                    }
+                    ViewBag.ListProducts = listProducts;
+                    return View("Success");
+
+
+                }
+                else
+                {
+                    ViewBag.Error = "File type is incorrect<br>";
+                    return View("About");
+                }
+
+
+            }
+        }
+
+
+
+
         // GET: Home/Details/5
         public ActionResult Details(int? id)
-        {
+            {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

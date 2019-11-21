@@ -4,4 +4,25 @@
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+
+
+</head>
+
+<body>
+    @using (Html.BeginForm("About", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        @Html.Raw(ViewBag.Error)
+        <span> Excel File </span><input type="file" name="excelfile" />
+        <br />
+        <input type="submit" value="About" />
+    }
+
+
+</body>
