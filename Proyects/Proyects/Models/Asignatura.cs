@@ -11,14 +11,12 @@ namespace Proyects.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-    public partial class EventosA
+    
+    public partial class Asignatura
     {
         public int Id { get; set; }
-        [Required]
-        public string Eventos { get; set; }
-        public Nullable<System.DateTime> Fecha { get; set; }
-        public Nullable<System.TimeSpan> Hora { get; set; }
+        public string Matricula { get; set; }
+        public string Nombre { get; set; }
+        public string Asignatura1 { get; set; }
     }
 }
