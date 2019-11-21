@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Success";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Success</title>
+</head>
+
+<body>
+   
+    <h3>List Products</h3>
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+
+            <th>id</th>
+            <th>evento</th>
+            <th>fecha</th>
+            <th>hora</th>
+        </tr>
+        @foreach (var p in ViewBag.ListProducts)
+        {
+        <tr>
+            <td>@p.id</td>
+            <td>@p.evento</td>
+            <td>@p.fecha</td>
+            <td>@p.hora</td>
+
+        </tr>
+        }
+
+
+
+
+
+
+
+    </table>
+
+
+</body>
+
+
+
+
+</html>
+
