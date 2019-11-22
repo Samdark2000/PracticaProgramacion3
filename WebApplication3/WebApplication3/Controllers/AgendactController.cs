@@ -10,107 +10,108 @@ using WebApplication3.Models;
 
 namespace WebApplication3.Controllers
 {
-    public class HomeController : Controller
+    public class AgendactController : Controller
     {
-        private ConsultaEntities db = new ConsultaEntities();
+        private Model7Container db = new Model7Container();
 
-        // GET: Home
+        // GET: Agendact
         public ActionResult Index()
         {
-            return View(db.Estudiantes.ToList());
+
+            return View(db.Agenda1Set.ToList());
         }
 
-        // GET: Home/Details/5
+        // GET: Agendact/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Estudiantes estudiantes = db.Estudiantes.Find(id);
-            if (estudiantes == null)
+            Agenda1 agenda1 = db.Agenda1Set.Find(id);
+            if (agenda1 == null)
             {
                 return HttpNotFound();
             }
-            return View(estudiantes);
+            return View(agenda1);
         }
 
-        // GET: Home/Create
+        // GET: Agendact/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Home/Create
+        // POST: Agendact/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Miembro,Asignatura,Cuatrimestre")] Estudiantes estudiantes)
+        public ActionResult Create([Bind(Include = "Id,Nombre,Cedula,Email,Direccion")] Agenda1 agenda1)
         {
             if (ModelState.IsValid)
             {
-                db.Estudiantes.Add(estudiantes);
+                db.Agenda1Set.Add(agenda1);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(estudiantes);
+            return View(agenda1);
         }
 
-        // GET: Home/Edit/5
+        // GET: Agendact/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Estudiantes estudiantes = db.Estudiantes.Find(id);
-            if (estudiantes == null)
+            Agenda1 agenda1 = db.Agenda1Set.Find(id);
+            if (agenda1 == null)
             {
                 return HttpNotFound();
             }
-            return View(estudiantes);
+            return View(agenda1);
         }
 
-        // POST: Home/Edit/5
+        // POST: Agendact/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Miembro,Asignatura,Cuatrimestre")] Estudiantes estudiantes)
+        public ActionResult Edit([Bind(Include = "Id,Nombre,Cedula,Email,Direccion")] Agenda1 agenda1)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(estudiantes).State = EntityState.Modified;
+                db.Entry(agenda1).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(estudiantes);
+            return View(agenda1);
         }
 
-        // GET: Home/Delete/5
+        // GET: Agendact/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Estudiantes estudiantes = db.Estudiantes.Find(id);
-            if (estudiantes == null)
+            Agenda1 agenda1 = db.Agenda1Set.Find(id);
+            if (agenda1 == null)
             {
                 return HttpNotFound();
             }
-            return View(estudiantes);
+            return View(agenda1);
         }
 
-        // POST: Home/Delete/5
+        // POST: Agendact/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Estudiantes estudiantes = db.Estudiantes.Find(id);
-            db.Estudiantes.Remove(estudiantes);
+            Agenda1 agenda1 = db.Agenda1Set.Find(id);
+            db.Agenda1Set.Remove(agenda1);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -123,11 +124,5 @@ namespace WebApplication3.Controllers
             }
             base.Dispose(disposing);
         }
-        public ActionResult Acerca()
-        {
-            return View();
-        }
-
-
     }
 }

@@ -49,6 +49,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -168,14 +170,101 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Agenda2Controller.cs" />
+    <Compile Include="Controllers\AgendactController.cs" />
+    <Compile Include="Controllers\AspNetRoles.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AspNetUserClaims.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AspNetUserLogins.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AspNetUsers.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\C__MigrationHistory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Agenda1.cs">
+      <DependentUpon>Model7.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Agenda2.cs">
+      <DependentUpon>Model53.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Estudiantes.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model53.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model53.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model53.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model53.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model53.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model53.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model7.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model7.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model7.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model7.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model7.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -185,12 +274,83 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Controllers\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Controllers\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model53.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model53.Context.cs</LastGenOutput>
+      <DependentUpon>Model53.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model53.edmx.sql" />
+    <Content Include="Models\Model53.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model53.cs</LastGenOutput>
+      <DependentUpon>Model53.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model7.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model7.Context.cs</LastGenOutput>
+      <DependentUpon>Model7.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model7.edmx.sql" />
+    <Content Include="Models\Model7.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model7.cs</LastGenOutput>
+      <DependentUpon>Model7.edmx</DependentUpon>
+    </Content>
+    <Content Include="sam.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Controllers\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Controllers\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Model7.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model7.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model7.edmx.diagram">
+      <DependentUpon>Model7.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Model53.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model53.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model53.edmx.diagram">
+      <DependentUpon>Model53.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -213,7 +373,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -235,7 +394,23 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\Success.cshtml" />
+    <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Home\Delete.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\Edit.cshtml" />
+    <Content Include="Views\Agendact\Create.cshtml" />
+    <Content Include="Views\Agendact\Delete.cshtml" />
+    <Content Include="Views\Agendact\Details.cshtml" />
+    <Content Include="Views\Agendact\Edit.cshtml" />
+    <Content Include="Views\Agendact\Index.cshtml" />
+    <Content Include="Views\Agenda2\Create.cshtml" />
+    <Content Include="Views\Agenda2\Delete.cshtml" />
+    <Content Include="Views\Agenda2\Details.cshtml" />
+    <Content Include="Views\Agenda2\Edit.cshtml" />
+    <Content Include="Views\Agenda2\Index.cshtml" />
+    <Content Include="Views\Home\Acerca.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -285,6 +460,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
